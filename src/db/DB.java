@@ -46,7 +46,9 @@ public class DB {
 	
 	public static void closeStatement(Statement st) {
 		try {
-			st.close();
+			if(st != null) {
+				st.close();
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			throw new DBException(e.getMessage());
@@ -55,7 +57,9 @@ public class DB {
 	
 	public static void closeResultSet(ResultSet rs) {
 		try {
-			rs.close();
+			if(rs != null) {
+				rs.close();
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			throw new DBException(e.getMessage());
